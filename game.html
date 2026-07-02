@@ -1,0 +1,227 @@
+<html>
+ <head><title>apple game</title></head>
+ <style>
+ body{
+  background-image: url('Bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+ }
+  .fruit1{
+  
+  background-image: url('fruit1.png');
+  background-size: cover;
+   position: absolute;
+   left: 30%;
+    height: 300px;
+    width: 300px;
+  }
+    .fruit2{
+    background-image: url('fruit2.png');
+  background-size: cover;
+   position: absolute;
+   left: 30%;
+    height: 300px;
+    width: 300px;
+  }
+    .fruit3{
+   background-image: url('fruit3.png');
+  background-size: cover;
+   position: absolute;
+   left: 30%;
+    height: 300px;
+    width: 300px;
+  }
+  span{ 
+   background-color: white;
+   border: solid grey;
+    color: black;
+   font-size: 90px;
+ 
+  }
+  .bucket1{
+   display: block;
+   background-image:url('Bucket1.png');
+   background-size: cover;
+   position: absolute;
+   
+   left: 30%;
+   top: 1100px;
+    height: 300px;
+    width: 300px;
+  }
+    .bucket2{
+     display: block;
+   background-image:url('Bucket2.png');
+   background-size: cover;
+   position: absolute;
+   left: 30%;
+   top: 1100px;
+    height: 300px;
+    width: 300px;
+  }
+    .bucket3{
+     display: block;
+   background-image:url('Bucket3.png');
+   background-size: cover;
+   position: absolute;
+   left: 30%;
+   top: 1100px;
+    height: 300px;
+    width: 300px;
+  }
+  
+  .button1{
+   background-image: url('button1.png');
+   background-size: cover;
+   border-radius: 30px;
+  
+   position: absolute;
+   left: 10%;
+   top: 1500px;
+    height: 200px;
+    width: 200px;
+  }
+  button:active {
+  transform: translateY(15px);
+}
+  .button2{
+      background-image: url('button2.png');
+   background-size: cover;
+   border-radius: 30px;
+   position: absolute;
+   left: 38%;
+   top: 1500px;
+    height: 200px;
+    width: 200px;
+  }
+  .button3{
+     background-image: url('button3.png');
+   background-size: cover;
+   border-radius: 30px;
+   position: absolute;
+   left: 65%;
+   top: 1500px;
+    height: 200px;
+    width: 200px;
+  }
+  #input{
+   display: none;
+  }
+  .back{
+   background-image: url('Back.png');
+   border-radius: 20px;
+   background-size: cover;
+   height: 200px;
+   width: 200px;
+  }
+ </style>
+ <body>
+ <a href="index.html"><button class="back"></button></a>
+  <center>
+   
+   <span class="score">Score:</span><span id="score">0</span>
+<input type="text" id="input" value="3"  >
+      
+      
+  <div class="fruit1" id="fruit1"></div>
+    <div class="fruit2" id="fruit2"></div>
+      <div class="fruit3" id="fruit3"></div>
+  
+
+  <div class="bucket1" id="bucket1"></div>
+    <div class="bucket2" id="bucket2"></div>
+      <div class="bucket3" id="bucket3"></div>
+
+  <button onclick="button1()" class="button1" id="Bucket1"></button>
+  <button onclick="button2()" class="button2" id="Bucket2"></button>
+   <button onclick="button3()" class="button3" id="Bucket3"></button>
+  
+  
+  </center>
+ </body>
+<script>
+
+ 
+ 
+
+ 
+ 
+   let a = -5000;
+   let b = -10000;
+   let c = -2000;
+   let so = 0;
+
+  function button1(){
+  input.value = 1;
+  if(input.value == 1){
+   bucket1.style.display = "flex";
+      bucket2.style.display = "none";
+         bucket3.style.display = "none";
+
+   
+  }
+}
+  
+ 
+ function button2(){
+  input.value = 2;
+  if(input.value == 2){
+    bucket1.style.display = "none";
+      bucket2.style.display = "flex";
+         bucket3.style.display = "none";
+    
+ }
+ }
+ function button3(){
+  input.value = 3;
+  if(input.value== 3){
+    bucket1.style.display = "none";
+      bucket2.style.display = "none";
+         bucket3.style.display = "flex";
+  }
+ }
+
+   
+   
+ setInterval(function(){
+  
+ a += 10;
+ fruit1.style.top = a +"px";
+ if(a == 1500){
+  a = -5000;
+ }
+ if(input.value == 1 && a == 1100){
+  so+= 1;
+  document.getElementById("score").innerHTML=so;
+  a = -10000
+ }
+ 
+ 
+ b += 10;
+ fruit2.style.top = b +"px";
+ if(b == 1500){
+  b = -10000
+ }
+ if(input.value == 2 && b == 1100){
+  so += 1;
+  document.getElementById("score").innerHTML=so;
+  b = -15000
+ }
+ 
+ 
+ 
+ c += 10;
+ fruit3.style.top = c +"px";
+ if(c == 1500){
+  c = -2000
+ }
+ if(input.value == 3 && c == 1100){
+  so += 1;
+  document.getElementById("score").innerHTML=so;
+  c = -20000
+ }
+ },8.5);
+ 
+ 
+</script>
+</html>
